@@ -1,0 +1,3035 @@
+import java.util.Scanner;
+class Vehicle
+{
+    int vehiclenum;
+    String name;
+    String brand;
+    String colour;
+    int vehicleprice;
+    //Assigning private details:
+    private int Aadharnum;
+    public  void setAadharnum(int Aadharnum)
+    {
+        this.Aadharnum=Aadharnum;
+    }
+    public int getAadharnum()
+    {
+        return Aadharnum;
+    }
+    private int customerid;
+    public  void setcustomerid(int customerid )
+    {
+        this.customerid=customerid;
+    }
+    public int getcustomerid()
+    {
+        return customerid;
+    }
+    private int receiptno;
+    public  void setreceiptno(int receiptnum)
+    {
+        this.receiptno=receiptnum;
+    }
+    public int getreceiptno()
+    {
+        return receiptno;
+    }
+    //assigning behaviour:
+    public static void Start()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("you ride on vehicle");
+    }
+    public static void Stop()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("you stop vehicle");        
+    }
+    public static void Drift()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("you Drift vehicle"); 
+        System.out.println("to stop enter any");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt();
+        Stop();       
+    }
+}
+class Twowheeler extends Vehicle
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Twowheeler section ");
+        System.out.println("we have 1)Honda 2)Bajaj 3)TVS 4)RoyalEnfield 5)Yamaha 6)Firefox");
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter your choice :");  
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Honda ref=new Honda();
+            ref.Two();
+            break;
+            case 2:Bajaj ref1=new Bajaj();
+            ref1.Two();
+            break;
+            case 3:Tvs ref2=new Tvs();
+            ref2.Two();
+            break;
+            case 4:Royalenfield ref3=new Royalenfield();
+            ref3.Two();
+            break;
+            case 5:Yamaha ref4=new Yamaha();
+            ref4.Two();
+            break;
+            case 6:Cycle ref5=new Cycle();
+            ref5.Two();
+            break;
+            default: System.out.println("Wrong choice");
+
+        }
+    }
+}
+class Cycle extends Twowheeler
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Cycle section ");
+        System.out.println("we have one Cycle 1)Firefox 2)For Twowheeler Section ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Firefox ref=new Firefox();
+            ref.Two();
+            break;
+            case 2:Twowheeler ref1=new Twowheeler();
+            ref1.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+        }
+    }   
+}
+class Firefox extends Cycle
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Firefox****");
+        System.out.println("1)to confirm or 2)Twowheeler");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Twowheeler ref1=new Twowheeler();
+            ref1.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+        }
+    } 
+    public static void Two1()
+   {
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default:System.out.println("----------------------------------");
+         System.out.println("Wrong Choice Try again");
+    }
+    }
+    public static void Test()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("For test drive press any key");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        Vehicle v =new Vehicle();
+        v.Start();
+        System.out.println("----------------------------------");
+        System.out.println("1) To stop 2)For Drift and 3)For details");
+        Scanner sc1= new Scanner(System.in); 
+        int b= sc.nextInt();
+        if(b>=1 && b<=2)
+        {
+            switch(b)
+        {
+            case 1:v.Stop();
+                   break;
+            case 2: v.Drift();
+            break;
+            case 3: Details();
+            break;
+        }
+        } 
+        else
+        {
+            System.out.println("----------------------------------");
+            System.out.println("wrong choice enter again");
+            Two();
+        }
+    }
+    private int password=11;
+    public int getpassword()
+    {
+        return password;
+    }
+    public static void Details()
+    {
+
+        Vehicle P=new Vehicle();
+        P.vehiclenum=0000;
+        P.name="Sheela";
+        P.brand="Firefox";
+        P.colour="Black";
+        P.vehicleprice=21123;
+        System.out.println("Vehiclenum:"+P.vehiclenum);
+        System.out.println("Name:"+P.name);
+        System.out.println("Brand:"+P.brand);
+        System.out.println("Colour:"+P.colour);
+        System.out.println("vehicleprice:"+P.vehicleprice);
+        System.out.println("----------------------------------");
+        System.out.println("To access private details please enter password (password=11)");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt();
+        Splendor p=new Splendor();
+        int b=p.getpassword();
+        P.setreceiptno(148795); 
+        P.setcustomerid(89344645);
+        P.setAadharnum(875873254);
+        if(a==b)
+        {
+            System.out.println("----------------------------------");
+            System.out.println("Receiptno: "+P.getreceiptno());
+            System.out.println("Customerid: "+P.getcustomerid()); 
+            System.out.println("Aadharnum: "+P.getAadharnum());
+            Buy();
+        }
+        else
+        {
+            System.out.println("----------xoxoxoxoxoxox------------");
+            System.out.println("Wrong password enter again"); 
+        }
+
+    }
+    public static void Buy()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("1)To Buy Enter any key)Exit Showroom");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt();
+        if(a==1)
+        {
+            System.out.println("--Thank You you BUY Frefox----------------");
+        }
+        else
+        {
+            System.out.println("xoxoxox---------Visit again-------xoxox");
+        }
+    }
+}
+class Honda extends Twowheeler
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to honda section ");
+        System.out.println("we have two bike 1)Splender 2)Shine ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Splendor ref=new Splendor();
+            ref.Two();
+            break;
+            case 2:Shine ref1=new Shine();
+            ref1.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Splendor extends Honda
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Splendor****");
+        System.out.println("1)to confirm or 2)Shine or to 3) company enter");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Shine ref1=new Shine();
+            ref1.Two();
+            break;
+            case 3:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+
+    }
+    public static void Two1()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("1)for test drive or 2)personal details");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt();
+        switch(a)
+        {
+            case 1:Test();
+            break;
+            case 2:Details();
+            break;
+            default:System.out.println("----------------------------------");
+             System.out.println("Wrong Choice Try again");
+        }
+    }
+    public static void Test()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("For test drive press any key");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        Vehicle v =new Vehicle();
+        v.Start();
+        System.out.println("----------------------------------");
+        System.out.println("1) To stop 2)For Drift and 3)For details");
+        Scanner sc1= new Scanner(System.in); 
+        int b= sc.nextInt();
+        if(b>=1 && b<=2)
+        {
+            switch(b)
+        {
+            case 1:v.Stop();
+                   break;
+            case 2: v.Drift();
+            break;
+            case 3: Details();
+            break;
+
+        }
+        }
+        else
+        {
+            System.out.println("----------------------------------");
+            System.out.println("wrong choice enter again");
+            Two();
+        }
+        if(b>=1 && b<=2)
+        {
+            System.out.println("Enter any key to access details");
+            int c= sc.nextInt();
+            Details(); 
+        }
+        
+    }
+    private int password=11;
+    public int getpassword()
+    {
+        return password;
+    }
+
+    public static void Details()
+    {
+
+        
+        Vehicle P=new Vehicle();
+        P.vehiclenum=4563;
+        P.name="Sheela";
+        P.brand="Honda";
+        P.colour="Black";
+        P.vehicleprice=111123;
+        System.out.println("Vehiclenum:"+P.vehiclenum);
+        System.out.println("Name:"+P.name);
+        System.out.println("Brand:"+P.brand);
+        System.out.println("Colour:"+P.colour);
+        System.out.println("vehicleprice:"+P.vehicleprice);
+        System.out.println("----------------------------------");
+        System.out.println("To access private details please enter password (password=11)");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt();
+        Splendor p=new Splendor();
+        int b=p.getpassword();
+        P.setreceiptno(1458795); 
+        P.setcustomerid(58974645);
+        P.setAadharnum(87587954);
+        if(a==b)
+        {
+            System.out.println("----------------------------------");
+            System.out.println("Receiptno: "+P.getreceiptno());
+            System.out.println("Customerid: "+P.getcustomerid()); 
+            System.out.println("Aadharnum: "+P.getAadharnum());
+            Buy();
+        }
+        else
+        {
+            System.out.println("----------xoxoxoxoxoxox------------");
+            System.out.println("Wrong password enter again"); 
+        }
+        
+    }
+    public static void Buy()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("1)To Buy     Enter any key to)Exit Showroom");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt();
+        if(a==1)
+        {
+            System.out.println("--Thank You you BUY Splendor----------------");
+        }
+        else
+        {
+            System.out.println("xoxoxox---------Visit again-------xoxox");
+        }
+
+    }
+
+}
+class Shine extends Honda
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Shine****");
+        System.out.println("1)To confirm  or 2)2) other company ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+ public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1) To stop 2) for Drift and 3) details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=4536;
+    P.name="Leela";
+    P.brand="Honda";
+    P.colour="White";
+    P.vehicleprice=102098;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Shine p=new Shine();
+    int b=p.getpassword();
+    P.setreceiptno(34564532); 
+    P.setcustomerid(98746538);
+    P.setAadharnum(897654634);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again");
+        Details(); 
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Shine--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+
+    
+}
+class Bajaj extends Twowheeler
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Bajaj section ");
+        System.out.println("we have two bike 1)Pulsar 2)Platina ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Pulsar ref=new Pulsar();
+            ref.Two();
+            break;
+            case 2:Platina ref1=new Platina();
+            ref1.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+
+}
+class Pulsar extends Bajaj
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Pulsar****");
+        System.out.println("1)to confirm  or 2) Platina or 3)other company ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Platina ref1=new Platina();
+            ref1.Two();
+            break;
+            case 3:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=11;
+    P.name="Shaalu";
+    P.brand="Bajaj";
+    P.colour="Black";
+    P.vehicleprice=100293;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Pulsar p=new Pulsar();
+    int b=p.getpassword();
+    P.setreceiptno(1458796); 
+    P.setcustomerid(589746456);
+    P.setAadharnum(87587954);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Pulsar--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+
+}
+        
+class Platina extends Bajaj
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Platina****");
+        System.out.println("1)to confirm or to 2)other company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=8983;
+    P.name="Sunny";
+    P.brand="Honda";
+    P.colour="Black";
+    P.vehicleprice=80945;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Platina p=new Platina();
+    int b=p.getpassword();
+    P.setreceiptno(1458395); 
+    P.setcustomerid(58944645);
+    P.setAadharnum(87587924);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Platina--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}    
+}
+class Tvs extends Twowheeler
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to TVS section ");
+        System.out.println("we have two bike 1)Apache 2)Jupiter ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Apache ref=new Apache();
+            ref.Two();
+            break;
+            case 2:Jupiter ref1=new Jupiter();
+            ref1.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Apache extends Tvs
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Apache****");
+        System.out.println("1)confirm 2)Jupiter 3)other company ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Jupiter ref1=new Jupiter();
+            ref1.Two();
+            break;
+            case 3:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6785;
+    P.name="Sundra";
+    P.brand="TVS";
+    P.colour="Black";
+    P.vehicleprice=11;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Apache p=new Apache();
+    int b=p.getpassword();
+    P.setreceiptno(1458775); 
+    P.setcustomerid(48974645);
+    P.setAadharnum(97587954);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Apache--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Jupiter extends Tvs
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Jupiter****");
+        System.out.println("1)to confirm 2)other company ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default:System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6789;
+    P.name="Sundri";
+    P.brand="TVS";
+    P.colour="Black";
+    P.vehicleprice=11;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Jupiter p=new Jupiter();
+    int b=p.getpassword();
+    P.setreceiptno(1458785); 
+    P.setcustomerid(48974685);
+    P.setAadharnum(97587984);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again");
+        Details(); 
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Jupiter--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Royalenfield extends Twowheeler
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Royalenfield section ");
+        System.out.println("we have two bike 1)Thunderbird 2)Classic ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Thunderbird ref=new Thunderbird();
+            ref.Two();
+            break;
+            case 2:Classic ref1=new Classic();
+            ref1.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Thunderbird extends Royalenfield
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Thunderbird****");
+        System.out.println("1)confirm 2)Classic 3)other company ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Classic ref1=new Classic();
+            ref1.Two();
+            break;
+            case 3:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=1111;
+    P.name="Sundri";
+    P.brand="Royalenfield";
+    P.colour="Black";
+    P.vehicleprice=11;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Thunderbird p=new Thunderbird();
+    int b=p.getpassword();
+    P.setreceiptno(1458781); 
+    P.setcustomerid(48974681);
+    P.setAadharnum(97587981);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again");
+        Details(); 
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Thunderbird--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Classic extends Royalenfield
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Classic****");
+        System.out.println("1)confirm 2)other company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=1122;
+    P.name="Sundri";
+    P.brand="Royalenfield";
+    P.colour="Black";
+    P.vehicleprice=11;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Classic p=new Classic();
+    int b=p.getpassword();
+    P.setreceiptno(1448781); 
+    P.setcustomerid(44974681);
+    P.setAadharnum(97487981);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Classic--------------");
+    }
+    else
+    {
+        System.out.println("Visit again");
+    }
+}
+}
+class Yamaha extends Twowheeler
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Yamaha section ");
+        System.out.println("we have two bike 1)R15 2)MT15 ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:R15 ref=new R15();
+            ref.Two();
+            break;
+            case 2:MT15 ref1=new MT15();
+            ref1.Two();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+        }
+    }
+}
+class R15 extends Yamaha
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****R15****");
+        System.out.println("1)Confirm 2)MT15 3)Other Company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:MT15 ref1=new MT15();
+            ref1.Two();
+            break;
+            case 3:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6376;
+    P.name="Sundra";
+    P.brand="Yamaha";
+    P.colour="Black";
+    P.vehicleprice=178778;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    R15 p=new R15();
+    int b=p.getpassword();
+    P.setreceiptno(1448781); 
+    P.setcustomerid(44974681);
+    P.setAadharnum(97487981);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY R15--------------");
+    }
+    else
+    {
+        System.out.println("Visit again");
+    }
+}
+}
+class MT15 extends Yamaha
+{
+    public static void Two()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****MT15****");
+        System.out.println("1)To confirm 2)Other company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Two1();
+            break;
+            case 2:Twowheeler ref2=new Twowheeler();
+            ref2.Two();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    } 
+    public static void Two1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Two();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6376;
+    P.name="Sundra";
+    P.brand="Yamaha";
+    P.colour="Black";
+    P.vehicleprice=178778;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    MT15 p=new MT15();
+    int b=p.getpassword();
+    P.setreceiptno(1448731); 
+    P.setcustomerid(44974641);
+    P.setAadharnum(97487941);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY MT15--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}   
+}
+class Threewheeler extends Vehicle
+{
+    public static void Three()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Three wheeler section ");
+        System.out.println("we have only one Three wheeler is Auto ");
+        System.out.println("Enter one for Auto  ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Auto ref=new Auto();
+            ref.Three();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Auto extends Threewheeler
+{
+    public static void Three()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Auto****");
+        System.out.println("1)to confirm");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Three1();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Three1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default:System.out.println("----------------------------------");
+         System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Three();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6378;
+    P.name="Sundra";
+    P.brand="Mahindra";
+    P.colour="Black";
+    P.vehicleprice=178728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Auto p=new Auto();
+    int b=p.getpassword();
+    P.setreceiptno(1448231); 
+    P.setcustomerid(44924641);
+    P.setAadharnum(97482941);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Auto--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Fourwheeler extends Vehicle
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Fourheeler section ");
+        System.out.println("we have 1)Petrol 2)Diesel 3)EV Cars");
+        System.out.println("Enter your choice: ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Petrol ref=new Petrol();
+            ref.Four();
+            break;
+            case 2:Diesel ref1=new Diesel();
+            ref1.Four();
+            break;
+            case 3:Ev ref2=new Ev();
+            ref2.Four();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong choice");
+
+        }
+    }
+}
+class Petrol extends Fourwheeler
+{
+    public static void Four()
+    {
+        System.out.println("Welcome to Petrol Cars ");
+        System.out.println("we have two Cars 1)Swift 2)Alto 3)Back ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Swift ref=new Swift();
+            ref.Four();
+            break;
+            case 2:Alto ref1=new Alto();
+            ref1.Four();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Swift extends Petrol
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Swift****");
+        System.out.println("1)Confirm 2) Alto enter 3)Other Company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Four1();
+            break;
+            case 2:Alto ref1=new Alto();
+            ref1.Four();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Four1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Four();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6376;
+    P.name="Sundra";
+    P.brand="Maruti Sizuki";
+    P.colour="Black";
+    P.vehicleprice=578728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Swift p=new Swift();
+    int b=p.getpassword();
+    P.setreceiptno(1448221); 
+    P.setcustomerid(44924641);
+    P.setAadharnum(97483941);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Swift--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}    
+}
+class Alto extends Petrol
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Alto****");
+        System.out.println("1)Confirm 2)Alto 3)Other Company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Four1();
+            break;
+            case 2:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+            
+
+        }
+    }
+    public static void Four1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default:System.out.println("----------------------------------");
+                System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Four();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6336;
+    P.name="Sundra";
+    P.brand="Maruti Sizuki";
+    P.colour="Black";
+    P.vehicleprice=478728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Alto p=new Alto();
+    int b=p.getpassword();
+    P.setreceiptno(1448241); 
+    P.setcustomerid(45924641);
+    P.setAadharnum(97483741);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Alto--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Diesel extends Fourwheeler
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Diesel Cars ");
+        System.out.println("we have two Cars 1)Innova 2)Fortuner 3)Back ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Innova ref=new Innova();
+            ref.Four();
+            break;
+            case 2:Fortuner ref1=new Fortuner();
+            ref1.Four();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Innova extends Diesel
+{
+    public static void Four()
+    {
+        System.out.println("****Innova****");
+        System.out.println("1)Confirm 2) Fortuner 3)Other company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Four1();
+            break;
+            case 2:Fortuner ref1=new Fortuner();
+            ref1.Four();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Four1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Four();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6332;
+    P.name="Sundra";
+    P.brand="Toyota";
+    P.colour="Black";
+    P.vehicleprice=1478728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Innova p=new Innova();
+    int b=p.getpassword();
+    P.setreceiptno(1448241); 
+    P.setcustomerid(45224641);
+    P.setAadharnum(97433741);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Innova--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Fortuner extends Diesel
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Fortuner****");
+        System.out.println("1)Confirm 2)Fortuner 3)Other Company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Four1();
+            break;
+            case 2:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Four1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Four();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6372;
+    P.name="Sundra";
+    P.brand="Toyota";
+    P.colour="Black";
+    P.vehicleprice=2578728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Fortuner p=new Fortuner();
+    int b=p.getpassword();
+    P.setreceiptno(1447741); 
+    P.setcustomerid(45224677);
+    P.setAadharnum(97433799);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Fortuner--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Ev extends Fourwheeler
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Ev Cars ");
+        System.out.println("we have two Cars 1)Mg 2)Tesla 3)Back ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Mg ref=new Mg();
+            ref.Four();
+            break;
+            case 2:Tesla ref1=new Tesla();
+            ref1.Four();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Mg extends Ev
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Mg****");
+        System.out.println("1)Confirm 2)Tesla 3)Other company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Four1();
+            break;
+            case 2:Tesla ref1=new Tesla();
+            ref1.Four();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default:System.out.println("----------------------------------");
+             System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Four1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("wrong choice enter again");
+        Four();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=6352;
+    P.name="Sundra";
+    P.brand="MG hector";
+    P.colour="Red";
+    P.vehicleprice=1578728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Mg p=new Mg();
+    int b=p.getpassword();
+    P.setreceiptno(1447141); 
+    P.setcustomerid(45224637);
+    P.setAadharnum(97433729);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again");
+        Details(); 
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY MG Hector--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Tesla extends Ev
+{
+    public static void Four()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Tesla****");
+        System.out.println("1)Confirm 2)Other Company");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Four1();
+            break;
+            case 2:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            default: System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Four1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Four();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=0001;
+    P.name="Sundra";
+    P.brand="Tesla";
+    P.colour="White";
+    P.vehicleprice=15578728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Tesla p=new Tesla();
+    int b=p.getpassword();
+    P.setreceiptno(1447878); 
+    P.setcustomerid(45227677);
+    P.setAadharnum(97433876);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again"); 
+        Details();
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Tesla--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+}
+class Eightwheeler extends Vehicle
+{
+    public static void Eight()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to Eight wheeler section ");
+        System.out.println("we have only one eight wheeler is Bus ");
+        System.out.println("1)For bus  ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Bus ref=new Bus();
+            ref.Eight();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+}
+class Bus extends Eightwheeler
+{
+    public static void Eight()
+    {
+        System.out.println("----------------------------------");
+        System.out.println("****Bus****");
+        System.out.println("to confirm enter 1  ");
+        Scanner sc= new Scanner(System.in); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Eight1();
+            break;
+            default: System.out.println("----------------------------------");
+            System.out.println("Wrong Choice");
+
+        }
+    }
+    public static void Eight1()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)for test drive or 2)personal details");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    switch(a)
+    {
+        case 1:Test();
+        break;
+        case 2:Details();
+        break;
+        default: System.out.println("----------------------------------");
+        System.out.println("Wrong Choice Try again");
+
+    }
+}
+public static void Test()
+{
+    System.out.println("----------------------------------");
+    System.out.println("For test drive press any key");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt(); 
+    Vehicle v =new Vehicle();
+    v.Start();
+    System.out.println("----------------------------------");
+    System.out.println("1)To stop 2)Drift 3)Details");
+    Scanner sc1= new Scanner(System.in); 
+    int b= sc.nextInt();
+    if(b>=1 && b<=2)
+    {
+        switch(b)
+    {
+        case 1:v.Stop();
+               break;
+        case 2: v.Drift();
+        break;
+        case 3: Details();
+        break;
+
+    }
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("wrong choice enter again");
+        Eight();
+    }
+    if(b>=1 && b<=2)
+    {
+        System.out.println("Enter any key to access details");
+        int c= sc.nextInt();
+        Details(); 
+    }
+    
+}
+private int password=11;
+public int getpassword()
+{
+    return password;
+}
+
+public static void Details()
+{
+
+    
+    Vehicle P=new Vehicle();
+    P.vehiclenum=9876;
+    P.name="Sundra";
+    P.brand="Volovo";
+    P.colour="Sky Blue";
+    P.vehicleprice=15578728;
+    System.out.println("Vehiclenum:"+P.vehiclenum);
+    System.out.println("Name:"+P.name);
+    System.out.println("Brand:"+P.brand);
+    System.out.println("Colour:"+P.colour);
+    System.out.println("vehicleprice:"+P.vehicleprice);
+    System.out.println("----------------------------------");
+    System.out.println("To access private details please enter password (password=11)");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    Bus p=new Bus();
+    int b=p.getpassword();
+    P.setreceiptno(1447877); 
+    P.setcustomerid(45227679);
+    P.setAadharnum(97433875);
+    if(a==b)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Receiptno: "+P.getreceiptno());
+        System.out.println("Customerid: "+P.getcustomerid()); 
+        System.out.println("Aadharnum: "+P.getAadharnum());
+        Buy();
+    }
+    else
+    {
+        System.out.println("----------xoxoxoxoxoxox------------");
+        System.out.println("Wrong password enter again");
+        Details(); 
+    }
+    
+}
+public static void Buy()
+{
+    System.out.println("----------------------------------");
+    System.out.println("1)To Buy Enter any key)Exit Showroom");
+    Scanner sc= new Scanner(System.in); 
+    int a= sc.nextInt();
+    if(a==1)
+    {
+        System.out.println("Thank You you BUY Bus--------------");
+    }
+    else
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Visit again");
+    }
+}
+
+
+}
+class Driver1
+{
+
+    public static void main(String[]args)
+    {
+        System.out.println("----------------------------------");
+        System.out.println("Welcome to all in One Showroom");
+        Scanner sc= new Scanner(System.in);    //System.in is a standard input stream  
+        System.out.println("Enter your choice 1)Twowheeler 2)Threewheeler 3)Fourwheeler 4)Eightwheeler :"); 
+        System.out.println("----------------------------------"); 
+        int a= sc.nextInt(); 
+        switch(a)
+        {
+            case 1:Twowheeler ref=new Twowheeler();
+            ref.Two();
+            break;
+            case 2:Threewheeler ref1=new Threewheeler();
+            ref1.Three();
+            break;
+            case 3:Fourwheeler ref2=new Fourwheeler();
+            ref2.Four();
+            break;
+            case 4:Eightwheeler ref3=new Eightwheeler();
+            ref3.Eight();
+            break;
+            default: System.out.println("Wrong choice");
+                    break; 
+        } 
+        System.out.println("----------------------------------");
+        System.out.println("Thank You So Much Visit again");  
+        System.out.println("----------------------------------");             
+    }    
+}
